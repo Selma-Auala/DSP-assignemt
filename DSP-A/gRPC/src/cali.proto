@@ -1,0 +1,17 @@
+syntax = "proto3";
+package grpc_service;
+import "google/protobuf/wrappers.proto";
+//
+service cali {
+    rpc createRecord (recordInfo) returns (google.protobuf.StringValue);
+    rpc updateRecord (recordInfo) returns (google.protobuf.StringValue);
+    rpc viewRecord (recordInfo) returns (google.protobuf.StringValue);
+    rpc DeleteRecord (recordInfo) returns (google.protobuf.StringValue);
+}
+//
+message recordInfo {
+    string id = 1;
+    string artist_name =2;
+    string Album_name =3;
+    string year_Released =4;
+}
